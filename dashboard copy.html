@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard SITTA Universitas Terbuka" />
+  <title>SITTA | Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/auth.js"></script>
+</head>
+<body class="app-page" data-page="dashboard">
+  <header class="topbar">
+    <a class="topbar-brand" href="dashboard.html" aria-label="SITTA Dashboard">
+      <img class="ut-logo topbar-logo" src="img/ut-logo.png" alt="Universitas Terbuka" />
+      <span>
+        <strong>SITTA</strong>
+        <small>Universitas Terbuka</small>
+      </span>
+    </a>
+    <div class="topbar-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Ubah tema">☼</button>
+      <button class="profile-chip" id="profileButton" type="button">
+        <span class="avatar">AD</span>
+        <span class="profile-text"><strong>Admin UT-Daerah</strong><small>Operator</small></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <nav aria-label="Navigasi utama">
+        <p class="nav-section-title">MENU UTAMA</p>
+        <a class="nav-link active" href="dashboard.html"><span>⌂</span> Dashboard</a>
+        <a class="nav-link" href="stok.html"><span>▣</span> Informasi Bahan Ajar</a>
+        <a class="nav-link" href="tracking.html"><span>⇢</span> Tracking Pengiriman</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" id="reportToggle" type="button" aria-expanded="false"><span>▤</span> Laporan <b>⌄</b></button>
+          <div class="nav-submenu" id="reportMenu">
+            <a href="#progress" data-scroll-target="progress">Monitoring Progress DO</a>
+            <a href="#rekap" data-scroll-target="rekap">Rekap Bahan Ajar</a>
+          </div>
+        </div>
+        <a class="nav-link" href="#history"><span>◷</span> Histori Transaksi</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="security-badge">✓ Front-end mode</div>
+        <button class="logout-link" id="logoutButton" type="button">Keluar</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">DASHBOARD UT-DAERAH</p>
+          <h1 id="greeting">Selamat pagi, Admin 👋</h1>
+          <p>Monitor bahan ajar, status delivery order, dan aktivitas transaksi dalam satu halaman.</p>
+        </div>
+        <div class="hero-date" id="localDate"></div>
+      </section>
+
+      <section class="stat-grid" aria-label="Ringkasan data">
+        <article class="stat-card"><span class="stat-icon">▣</span><div><span>Total Bahan Ajar</span><strong id="totalStock">0</strong></div><small class="trend">Data dummy</small></article>
+        <article class="stat-card"><span class="stat-icon">⇢</span><div><span>DO Dalam Proses</span><strong>18</strong></div><small class="trend">+3 minggu ini</small></article>
+        <article class="stat-card"><span class="stat-icon">✓</span><div><span>DO Selesai</span><strong>42</strong></div><small class="trend">+8 minggu ini</small></article>
+        <article class="stat-card"><span class="stat-icon">◷</span><div><span>Transaksi Bulan Ini</span><strong>60</strong></div><small class="trend">Dummy report</small></article>
+      </section>
+
+      <section class="panel" id="progress">
+        <div class="section-heading">
+          <div><p class="eyebrow">MONITORING</p><h2>Progress Delivery Order</h2></div>
+          <a class="btn btn-secondary btn-sm" href="tracking.html">Lihat Tracking</a>
+        </div>
+        <div id="progressList" class="progress-list"></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel" id="rekap">
+          <div class="section-heading"><div><p class="eyebrow">REKAP</p><h2>Stok Bahan Ajar</h2></div><a class="text-link" href="stok.html">Lihat semua →</a></div>
+          <div class="mini-table-wrap"><table class="data-table compact"><thead><tr><th>Kode</th><th>Nama Bahan Ajar</th><th>Stok</th></tr></thead><tbody id="stockPreview"></tbody></table></div>
+        </article>
+
+        <article class="panel" id="history">
+          <div class="section-heading"><div><p class="eyebrow">AKTIVITAS</p><h2>Histori Transaksi</h2></div></div>
+          <div id="historyList" class="timeline"></div>
+        </article>
+      </section>
+
+      <footer class="app-footer">SITTA Front-End Prototype • Tugas Praktik 1 Pemrograman Berbasis Web</footer>
+    </main>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
