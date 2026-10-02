@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tracking Delivery Order SITTA" />
+  <title>SITTA | Tracking Pengiriman</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/auth.js"></script>
+</head>
+<body class="app-page" data-page="tracking">
+  <header class="topbar">
+    <a class="topbar-brand" href="dashboard.html"><img class="ut-logo topbar-logo" src="img/ut-logo.png" alt="Universitas Terbuka" /><span><strong>SITTA</strong><small>Universitas Terbuka</small></span></a>
+    <div class="topbar-actions"><a class="btn btn-secondary btn-sm" href="dashboard.html">← Dashboard</a></div>
+  </header>
+
+  <div class="layout single-content">
+    <main class="content">
+      <section class="page-header"><p class="eyebrow">TRACKING PENGIRIMAN</p><h1>Lacak Delivery Order</h1><p>Masukkan nomor Delivery Order untuk melihat nama mahasiswa, progres pengiriman, dan detail ekspedisi.</p></section>
+
+      <section class="panel search-panel">
+        <form id="trackingForm" class="tracking-form" novalidate>
+          <div class="form-group grow"><label for="doNumber">Nomor Delivery Order</label><input id="doNumber" type="text" placeholder="Contoh: DO-2023001234" required /></div>
+          <button class="btn btn-primary" type="submit">Cari</button>
+        </form>
+        <p class="helper-text">Coba: <button class="inline-code" type="button" data-demo-do="DO-2023001234">DO-2023001234</button> atau <button class="inline-code" type="button" data-demo-do="DO-2023005678">DO-2023005678</button></p>
+      </section>
+
+      <section id="trackingResult" class="tracking-result" hidden></section>
+      <section id="trackingEmpty" class="empty-state"><span class="empty-icon">⇢</span><h2>Belum ada pencarian</h2><p>Masukkan nomor Delivery Order di atas untuk menampilkan data tracking.</p></section>
+    </main>
+  </div>
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
